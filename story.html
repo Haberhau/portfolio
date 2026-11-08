@@ -28,8 +28,9 @@
 <!-- Bump ?v= on the CSS and JS links whenever they change, so browsers don't keep running an old copy. -->
 <link rel="stylesheet" href="css/site.css?v=8">
 <link rel="stylesheet" href="journey/journey.css?v=11">
-<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
-<script type="module">if (!document.documentElement.classList.contains('text')) import('./journey/journey.js?v=8').catch(() => document.documentElement.classList.add('text'));</script>
+<!-- three.js 0.160.0 is served from the site (vendor/three, MIT), so the story contacts no third party -->
+<script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js", "three/addons/": "./vendor/three/addons/" } }</script>
+<script type="module">if (!document.documentElement.classList.contains('text')) import('./journey/journey.js?v=9').catch(() => document.documentElement.classList.add('text'));</script>
 <noscript><style>#journey { height: auto; } #journey .stage { display: none; } #fallback { display: block; }</style></noscript>
 </head>
 <body>
@@ -73,7 +74,7 @@
 </main>
 
 <footer class="foot">
-  <div class="wrap"><span>© 2026 Florian Haberhauer</span><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#work">All work</a></nav></div>
+  <div class="wrap"><span>© 2026 · Disclosure (§ 25 MedienG): Florian Haberhauer, Amstetten, Austria</span><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#work">All work</a><a href="privacy.html">Privacy</a></nav></div>
 </footer>
 <script src="js/site.js?v=3" defer></script>
 </body>

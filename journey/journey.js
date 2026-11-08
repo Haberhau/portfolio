@@ -62,7 +62,7 @@ function screenCard(lines,ending=false){
   card.material.toneMapped=false;return card;
 }
 const welcome=screenCard(['Before the numbers.']);
-const invitation=screenCard(['Are you ready to be','part of my journey?'],true);invitation.material.transparent=true;
+const invitation=screenCard(['The next chapter could','be on your team.'],true);invitation.material.transparent=true;
 const smooth=x=>THREE.MathUtils.smoothstep(x,0,1);
 const progress=(s,a,b)=>smooth((s-a)/(b-a));
 const sheetGeo=new THREE.PlaneGeometry(1,1,1,56);const sheetMat=material(color.paper);sheetMat.map=map;sheetMat.side=THREE.DoubleSide;
@@ -478,7 +478,7 @@ const captions=[
 ['AFTER HOURS  /  APPS AND PLUGINS','Back at my desk, I build for myself.','I use AI coding tools to build iOS apps like Porchlight and Marginalia, and plugins like sprintkit.'],
 ['AFTER HOURS  /  INDEPENDENT ANALYSIS','Some evenings start with a question.','Did Austria\'s KlimaTicket change how people traveled? What happened to rents under Barcelona\'s cap? I use public data to practice answering questions outside work.'],
 ['NOW  /  AI AT WORK','The tools changed. The questions didn\'t.','Claude and Codex help me build faster. Deciding what is worth building is still my job.'],
-['YOUR MOVE','Are you ready to be part of my journey?','']
+['YOUR MOVE','The next chapter could be on your team.','']
 ];
 const stops=[0,1.45,2.65,3.7,4.95,5.57,5.99,6.55,7.36,7.78,8.44,9.31,10.49,11.45,13.3,15.0];
 const railLabels=['Start','Court','Bench','Keys','Kufstein','Intern','Testing','Analyst','Automation','Rollout','Barcelona','Evenings','Desk','Questions','AI','End'];
