@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Click &amp; collect glazing · Florian Haberhauer</title>
+<title>Click &amp; collect lens attribution · Florian Haberhauer</title>
 <meta name="description" content="How CRM appointments, click &amp; collect orders, lab orders and net sales were linked into one attribution model, and what each system made difficult.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#f4f1ea">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" href="../fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../css/site.css?v=7">
+<link rel="stylesheet" href="../css/site.css?v=8">
 <link rel="stylesheet" href="process.css?v=7"><!-- the drawn diagrams and the process list -->
 <link rel="stylesheet" href="work.css?v=2">
 </head>
@@ -33,7 +33,7 @@
   <header class="wrap head">
     <h1 class="heading-1 grad">How many click &amp; collect frames get our lenses?</h1>
     <p class="meta">At work · Silhouette · Analysis · CRM, orders, lab data</p>
-    <p class="sub body-7">At Silhouette, customers can reserve up to three frames online and try them on at a local optician. Nobody tracked whether the frame they kept was then glazed with our own lenses. The answer sat in three systems that were never built to talk to each other. I linked CRM appointments, order items, lab orders and actual net sales into one attribution model, and built in checks for how much of any match was just noise.</p><!-- TODO(Florian): outcome number for the proof strip -->
+    <p class="sub body-7">At Silhouette, customers can reserve up to three frames online and try them on at a local optician. Nobody tracked whether the frame they kept was then glazed with our own lenses. The answer sat in three systems that were never built to talk to each other. I linked CRM appointments, order items, lab orders and actual net sales into one attribution model, and built in checks for how much of any match was just noise.</p>
     <p class="note"><b>Company-internal.</b> This page shows how I worked; the results stay inside.</p>
   </header>
 
@@ -63,7 +63,7 @@
         <li><span class="who">Team</span><div class="step"><b>The question</b><span>Of the click &amp; collect frames customers keep, how many are glazed with our lenses? Click &amp; collect was meant to bring lens sales too, but nobody could see whether it did.</span></div><div></div></li>
         <li><span class="who me">Me</span><div class="step"><b>Pull four exports from three systems</b><span>Appointments and click &amp; collect orders from the CRM, lens orders from the lab system, net sales from the sales report.</span></div><p class="snag"><strong>CRM</strong>The appointment and the order are separate records, linked only by the order ID, and one order holds up to three frames.</p></li>
         <li><span class="who me">Me</span><div class="step"><b>One row per ordered frame</b><span>Split every order into its frames, so each frame can be followed on its own. This is the unit everything else is counted in.</span></div><div></div></li>
-        <li><span class="who me">Me</span><div class="step"><b>Match lens orders to frames</b><span>Same optician, same frame, from two days before to five days after the appointment date the customer gave.</span></div><p class="snag"><strong>Lab system</strong>The lab doesn't record the frame the way the CRM does. I tested matching rules from the exact frame code down to model, colour and size, model only, and the optician alone.</p></li>
+        <li><span class="who me">Me</span><div class="step"><b>Match lens orders to frames</b><span>Same optician, same frame, from two days before to five days after the appointment date the customer gave.</span></div><p class="snag"><strong>Lab system</strong>The lab doesn't record the frame the way the CRM does. I tested matching rules from the exact frame code down to model, color and size, model only, and the optician alone.</p></li>
         <li><span class="who me">Me</span><div class="step"><b>Deduplicate</b><span>A lens order counts for one frame only: the one with the closest appointment.</span></div><div></div></li>
         <li><span class="who me">Me</span><div class="step"><b>Check coverage</b><span>Count an order only if its whole matching window lies inside the lab data, and report the gaps instead of hiding them.</span></div><p class="snag"><strong>Lab system</strong>The lab data didn't cover every brand and period, which would have quietly pulled the answer down.</p></li>
         <li><span class="who me">Me</span><div class="step"><b>Test against a baseline</b><span>How often do the same opticians order lenses in a random window? A match only means something if it beats that.</span></div><p class="snag"><strong>Opticians</strong>Opticians order lenses all the time, so a lens order near a try-on proves nothing on its own.</p></li>
@@ -93,7 +93,7 @@
   <div class="wrap"><span>© 2026 Florian Haberhauer</span><nav aria-label="Footer"><a href="../index.html#work">All work</a><a href="../story.html">My story</a></nav></div>
 </footer>
 
-<script src="diagrams.js?v=9" defer></script>
-<script src="../js/site.js?v=2" defer></script>
+<script src="diagrams.js?v=10" defer></script>
+<script src="../js/site.js?v=3" defer></script>
 </body>
 </html>

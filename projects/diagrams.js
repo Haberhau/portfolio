@@ -120,7 +120,7 @@ function sieve(tall) {
   el('path', { d: `M${p(170, lane)} L${p(g3, lane)}`, class: 'dg-pipe' }, svg);
   lanes.forEach(v => el('path', { d: `M${p(g3, lane)} C${p(g3 + 40, lane)} ${p(g3 + 30, v)} ${p(g3 + 70, v)} L${p(end, v)}`, class: 'dg-pipe thin' }, svg));
   // the rules, each a gate across the lane
-  const gates = [[g1, 'Lines → orders', 'revenue dropped:|amounts unreliable'], [g2, 'Opticians out', 'accounts with more|than x orders'], [g3, 'Split', 'by brand and|sales channel'], [g4, 'First 30 days out', 'corrections and|colour swaps']];   // | = line break on phones
+  const gates = [[g1, 'Lines → orders', 'revenue dropped:|amounts unreliable'], [g2, 'Opticians out', 'accounts with more|than x orders'], [g3, 'Split', 'by brand and|sales channel'], [g4, 'First 30 days out', 'corrections and|color swaps']];   // | = line break on phones
   const ruleText = (x, y, rule) => (tall ? rule.split('|') : [rule.replace('|', ' ')]).forEach((line, i) => text(svg, x, y + i * S * 1.2, line, S, 'dg-s', tall ? 'start' : 'middle'));
   gates.forEach(([u, title, rule], n) => {
     el('line', { x1: at(u, lane - reach)[0], y1: at(u, lane - reach)[1], x2: at(u, lane + reach)[0], y2: at(u, lane + reach)[1], class: 'dg-gate' }, svg);

@@ -12,9 +12,9 @@
 <meta property="og:url" content="https://haberhau.github.io/p-4bhgh01ur8/">
 <meta property="og:title" content="Florian Haberhauer · Data analyst">
 <meta property="og:description" content="I read the numbers, then I build the tool. Data analyst in B2C reporting and CRM analytics who builds his own tools with AI. Projects, CV and contact.">
-<meta property="og:image" content="https://haberhau.github.io/p-4bhgh01ur8/img/share.jpg?v=2">
+<meta property="og:image" content="https://haberhau.github.io/p-4bhgh01ur8/img/share.jpg?v=3">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Florian Haberhauer, in light type, with the line: I read the numbers. Then I build the tool. Beside it a small white model of his hometown with Florian as the one orange figure.">
+<meta property="og:image:alt" content="Florian Haberhauer: I read the numbers, then I build the tool. Three figures (90% less manual reporting work, MSc GPA 9.23, 13,486 products scraped) beside a framed still of a drawn volleyball court with Florian as the one orange figure.">
 <meta name="twitter:card" content="summary_large_image">
 <script>
   // The journey moved to story.html; old links to it (#journey, ?nogl, ?still) go there.
@@ -23,7 +23,7 @@
 </script>
 <link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Bump ?v= on the CSS and JS links whenever they change, so browsers don't keep running an old copy. -->
-<link rel="stylesheet" href="css/site.css?v=7">
+<link rel="stylesheet" href="css/site.css?v=8">
 <style>
   main { position: relative; }
 
@@ -99,9 +99,9 @@
   /* Tagline reveal (B11): word by word, from muted to full ink */
   .tagline { padding: var(--s-900) 0; }
   .tagline p { max-width: 900px; }
-  .tagline .w { opacity: .28; transition: opacity .5s var(--ease); }
-  .tagline .w.on { opacity: 1; }
-  .tagline .w.accent { color: var(--orange-text); }
+  .tagline .w { color: var(--faint); transition: color .5s var(--ease); }   /* faint passes AA, so unread words stay legible */
+  .tagline .w.on { color: var(--ink); }
+  .tagline .w.accent.on { color: var(--orange-text); }
 
   /* Story teaser: a framed still from the journey */
   .story { display: grid; gap: var(--s-400); align-items: center; }
@@ -154,7 +154,7 @@
   <div class="wrap">
     <div>
       <h1 class="heading-1 grad" id="hero-h">I read the numbers,<br>then I build the tool</h1>
-      <p class="sub body-7"><b>Florian Haberhauer, data analyst at Silhouette.</b> Three years of B2C reporting and CRM analytics, an MSc in Big Data from Barcelona, and apps I build with AI coding tools.</p>
+      <p class="sub body-7"><b>Florian Haberhauer, data analyst at Silhouette, a global luxury eyewear company.</b> Three years of B2C reporting and CRM analytics, an MSc in Big Data from Barcelona, and apps I build with AI coding tools.</p>
       <div class="actions">
         <a class="btn" href="Florian-Haberhauer-CV.pdf" download>Download CV <span class="mono" aria-hidden="true">PDF</span></a>
         <a class="link" href="#work">See the work <span class="arrow" aria-hidden="true">→</span></a>
@@ -189,7 +189,7 @@
   <div class="wrap on-line">
     <div class="section-head" data-reveal>
       <h2 class="heading-2" id="work-h">The question, the tool, and what changed</h2>
-      <p class="body-7">Nine projects from work, my master's and my evenings. Work projects are company-internal: the method is real, the figures stay inside.</p>
+      <p class="body-7">Nine projects from work, my master's and my evenings. Work projects are company-internal: the methods are real, the internal results stay inside.</p>
     </div>
 
     <section class="group" aria-labelledby="g-work" data-reveal>
@@ -199,13 +199,13 @@
           <span class="f">A weekly stream of emailed sales reports, pulled together by hand, now flows into the dashboards on its own every day. <span class="arrow">→</span></span>
           <span class="k">−90%<small>manual work</small></span>
           <svg class="doodle" viewBox="0 0 120 48" aria-hidden="true"><path pathLength="1" d="M2 6C40 6 48 24 70 24"/><path pathLength="1" d="M2 15C40 15 48 24 70 24"/><path pathLength="1" d="M2 24H70"/><path pathLength="1" d="M2 33C40 33 48 24 70 24"/><path pathLength="1" d="M2 42C40 42 48 24 70 24"/><path pathLength="1" class="o" d="M70 24H98"/><rect x="100" y="14" width="18" height="20" rx="3"/></svg></a></li>
-        <li data-node><a href="projects/case-attribution.html"><span class="n">02</span><span class="t"><b>Click &amp; collect glazing</b><small>Analysis · CRM, orders, lab data</small></span>
+        <li data-node><a href="projects/case-attribution.html"><span class="n">02</span><span class="t"><b>Click &amp; collect lens attribution</b><small>Analysis · CRM, orders, lab data</small></span>
           <span class="f">CRM appointments, orders, lab orders and net sales linked into one attribution model, with a baseline to tell signal from noise. <span class="arrow">→</span></span>
-          <span class="k"><!-- TODO(Florian): outcome number --></span>
+          <span class="k">Internal<small>results stay inside</small></span>
           <svg class="doodle" viewBox="0 0 120 48" aria-hidden="true"><circle cx="8" cy="8" r="4"/><circle cx="8" cy="24" r="4"/><circle cx="8" cy="40" r="4"/><path pathLength="1" d="M12 8C40 8 44 24 62 24M12 24H62M12 40C40 40 44 24 62 24"/><rect class="if" x="62" y="16" width="16" height="16" rx="3"/><path pathLength="1" class="o" d="M78 24H112"/><circle class="of" cx="114" cy="24" r="3"/></svg></a></li>
         <li data-node><a href="projects/case-rebuy.html"><span class="n">03</span><span class="t"><b>Rebuy &amp; retention</b><small>Analysis · SQL views in SQLite</small></span>
           <span class="f">Salesforce customer and sales data cleaned rule by rule into reusable SQL views: rebuy timing, next purchase and lapsed customers. <span class="arrow">→</span></span>
-          <span class="k"><!-- TODO(Florian): outcome number --></span>
+          <span class="k">Internal<small>results stay inside</small></span>
           <svg class="doodle" viewBox="0 0 120 48" aria-hidden="true"><path pathLength="1" d="M4 34H116"/><path pathLength="1" class="o" d="M14 30C20 8 36 8 42 30"/><path pathLength="1" class="o" d="M42 30C48 14 60 14 66 30"/><circle class="if" cx="14" cy="34" r="4"/><circle class="if" cx="42" cy="34" r="4"/><circle class="if" cx="66" cy="34" r="4"/><circle cx="104" cy="34" r="4"/></svg></a></li>
       </ul>
     </section>
@@ -224,8 +224,8 @@
       <h3 id="g-data">Data projects</h3>
       <ul class="rows">
         <li data-node><a href="projects/klimaticket.html"><span class="n">05</span><span class="t"><b>KlimaTicket</b><small>Causal inference · public data</small></span>
-          <span class="f">Rail travel ran about 10 points above a synthetic Austria without the ticket; no measurable fall in driving. <span class="arrow">→</span></span>
-          <span class="k">+10 pts<small>rail vs synthetic</small></span>
+          <span class="f">Rail travel ran 10 to 15% above a synthetic Austria without the ticket; no measurable fall in driving. <span class="arrow">→</span></span>
+          <span class="k">+12%<small>rail vs synthetic, 2022–24</small></span>
           <svg class="doodle" viewBox="0 0 120 48" aria-hidden="true"><line class="dash" x1="62" y1="2" x2="62" y2="46"/><path pathLength="1" d="M2 32L20 30L40 33L62 30L84 30L116 28"/><path pathLength="1" class="o" d="M2 34L20 31L40 34L62 31L84 20L116 12"/></svg></a></li>
         <li data-node><a href="projects/rent-cap.html"><span class="n">06</span><span class="t"><b>Barcelona rent cap</b><small>Difference-in-differences · public data</small></span>
           <span class="f">Rents fell about 15% behind comparable uncapped towns. New contracts had already dropped before the cap. <span class="arrow">→</span></span>
@@ -247,7 +247,7 @@
           <svg class="doodle" viewBox="0 0 120 48" aria-hidden="true"><path pathLength="1" d="M2 24C8 10 12 38 18 24S28 6 34 24S44 40 50 24S60 14 66 24"/><path pathLength="1" d="M74 24H84"/><rect x="92" y="10" width="26" height="26" rx="5"/><path pathLength="1" class="o" d="M98 23L104 29L113 17"/></svg></a></li>
         <li data-node><a href="projects/sprintkit.html"><span class="n">09</span><span class="t"><b>sprintkit</b><small>Claude Code plugin · open source</small></span>
           <span class="f">A dev team's process for solo projects: refine, build, review, QA, release, retro. <span class="arrow">→</span></span>
-          <span class="k">6<small>stages per ticket</small></span>
+          <span class="k">3<small>quality gates per ticket</small></span>
           <svg class="doodle" viewBox="0 0 120 48" aria-hidden="true"><rect x="1" y="17" width="14" height="14" rx="3"/><rect x="21" y="17" width="14" height="14" rx="3"/><rect x="41" y="17" width="14" height="14" rx="3"/><rect x="61" y="17" width="14" height="14" rx="3"/><rect x="81" y="17" width="14" height="14" rx="3"/><rect class="of" x="101" y="17" width="14" height="14" rx="3"/><path pathLength="1" class="o" d="M1 40H115"/></svg></a></li>
       </ul>
     </section>
@@ -267,7 +267,7 @@
       <div>
         <h2 class="heading-3" id="story-h">From a volleyball court to a data desk</h2>
         <p class="body-7">Fourteen short scenes drawn out of my monitor, about ninety seconds of scrolling. Optional: it never stands between you and the CV.</p>
-        <div class="actions"><a class="btn ghost" href="story.html"><span aria-hidden="true">▶</span> Watch my story</a><a class="link" href="story.html?nogl">Read it instead</a></div>
+        <div class="actions"><a class="btn ghost" href="story.html"><span aria-hidden="true">▶</span> Watch my story</a></div>
       </div>
     </div>
   </div>
@@ -280,7 +280,7 @@
     </div>
     <ol class="cv" data-reveal>
       <li data-node><time>2025 – 2026</time><div><b>MSc Big Data &amp; Analytics <span class="tag">STUDY</span></b><span>EAE Business School, Barcelona. GPA 9.23/10, while working 25 hours a week.</span></div></li>
-      <li data-node><time>Mar 2024 → now</time><div><b>Consumer &amp; Digital Business Data Analyst <span class="tag">WORK</span></b><span>Silhouette International, Linz. B2C sales and marketing reporting, CRM analytics, Salesforce Service and Marketing Cloud, Scrum Master on two initiatives.</span></div></li>
+      <li data-node><time>Mar 2024 – present</time><div><b>Consumer &amp; Digital Business Data Analyst <span class="tag">WORK</span></b><span>Silhouette International, Linz. B2C sales and marketing reporting, CRM analytics, Salesforce Service and Marketing Cloud, Scrum Master on two initiatives.</span></div></li>
       <li data-node><time>Mar 2023 – Feb 2024</time><div><b>Digital Business Intern <span class="tag">WORK</span></b><span>Silhouette International, Linz. Dashboards, Salesforce rollout support, forecasting, CRM data structure.</span></div></li>
       <li data-node><time>2022 – 2023</time><div><b>Exchange semester <span class="tag">STUDY</span></b><span>RISEBA University, Riga.</span></div></li>
       <li data-node><time>Sep 2021 – Jul 2022</time><div><b>Project Manager, Business Projects <span class="tag">WORK</span></b><span>FH Kufstein Tirol. Two student business projects, teams of four to six.</span></div></li>
@@ -308,7 +308,7 @@
 
 <footer class="foot">
   <div class="wrap"><span>© 2026 Florian Haberhauer</span>
-    <nav aria-label="Footer"><a href="story.html">My story</a><a href="story.html?nogl">Text version</a></nav></div>
+    <nav aria-label="Footer"><a href="story.html">My story</a></nav></div>
 </footer>
 
 <script>
@@ -378,6 +378,6 @@ document.getElementById('copy').onclick = async () => {
   catch { status.textContent = 'Copy failed. Select the address above instead.'; }
 };
 </script>
-<script src="js/site.js?v=2" defer></script>
+<script src="js/site.js?v=3" defer></script>
 </body>
 </html>

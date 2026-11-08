@@ -54,3 +54,6 @@ body.theme-porchlight::after { opacity: .07; background-image: url("data:image/s
 .theme-porchlight { --on-accent: #2a1408; }
 .theme-porchlight .meta b { font-family: var(--font); font-size: 20px; font-weight: 400; }
 .theme-porchlight .wordmark span { color: var(--label); }
+
+/* The launch date is a status, not an action: plain text with the lit dot, no pill or glow */
+.theme-porchlight .launch { background: none; box-shadow: none; padding: 0; border-radius: 0; color: var(--glow); font: 500 14px/20px var(--mono); gap: 10px; }

@@ -75,6 +75,7 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; letter-spacing: -.02em; }
 .link:hover { text-decoration-thickness: 2px; }
 .arrow { display: inline-block; transition: transform .3s var(--ease); }
 a:hover .arrow { transform: translateX(var(--s-50)); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip { position: fixed; left: var(--s-75); top: var(--s-75); z-index: 60; background: #fff; padding: var(--s-75) var(--s-100); border-radius: var(--r-lg); transform: translateY(-200%); }
 .skip:focus { transform: none; }
 .todo { display: inline-block; font: 500 12px/16px var(--mono); color: var(--todo); background: var(--todo-bg); border: 1px dashed #d9b25a; border-radius: var(--r-md); padding: var(--s-25) var(--s-75); }

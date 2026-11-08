@@ -47,7 +47,7 @@ function drawCourt(p){
   map.needsUpdate=true;
 }
 const map=new THREE.CanvasTexture(courtCanvas);map.colorSpace=THREE.SRGBColorSpace;map.anisotropy=renderer.capabilities.getMaxAnisotropy();
-// The screen shows its own light, so it skips tone mapping and stays crisp and true to colour.
+// The screen shows its own light, so it skips tone mapping and stays crisp and true to color.
 const screenMat=new THREE.MeshBasicMaterial({map,toneMapped:false});
 mesh(monitor,new THREE.PlaneGeometry(3.08,1.73),screenMat,0,1.32,.051);
 function screenCard(lines,ending=false){
@@ -473,11 +473,11 @@ const captions=[
 ['2024  /  CONSUMER & DIGITAL BUSINESS DATA ANALYST','The reporting became mine.','I owned B2C sales and marketing reporting across markets. Senior stakeholders relied on the figures I delivered.','PROMOTED  ·  INTERN → DATA ANALYST'],
 ['2024  /  DATA ANALYST','I learned to automate the work.','With Python and Power Automate, I took the reports from weekly to daily and cut manual work by 90%.'],
 ['SILHOUETTE  /  SYSTEM OWNERSHIP','Now I was leading the rollout.','I led the business side of Service Cloud and Marketing Cloud, from requirements to adoption. I became technical owner of Service Cloud and B2C reporting.'],
-['2025–26  /  BARCELONA','A new city. Still a data analyst.','I continued as a Data Analyst at Silhouette, 25 hours a week. One assignment was to act as Scrum Master as we brought B2C fulfilment in-house.'],
+['2025–26  /  BARCELONA','A new city. Still a data analyst.','I continued as a Data Analyst at Silhouette, 25 hours a week. One assignment was to act as Scrum Master as we brought B2C fulfillment in-house.'],
 ['2025–26  /  EAE BUSINESS SCHOOL','Each evening, I was a student again.','After work I studied Big Data & Analytics at EAE. A year later, I finished with a 9.23 out of 10 and a top grade for our thesis.'],
 ['AFTER HOURS  /  APPS AND PLUGINS','Back at my desk, I build for myself.','I use AI coding tools to build iOS apps like Porchlight and Marginalia, and plugins like sprintkit.'],
-['AFTER HOURS  /  INDEPENDENT ANALYSIS','Some evenings start with a question.','Did Austria’s KlimaTicket change how people travelled? What happened to rents under Barcelona’s cap? I use public data to practise answering questions outside work.'],
-['NOW  /  AI AT WORK','The tools changed. The questions didn’t.','Claude and Codex help me build faster. Deciding what is worth building is still my job.'],
+['AFTER HOURS  /  INDEPENDENT ANALYSIS','Some evenings start with a question.','Did Austria\'s KlimaTicket change how people traveled? What happened to rents under Barcelona\'s cap? I use public data to practice answering questions outside work.'],
+['NOW  /  AI AT WORK','The tools changed. The questions didn\'t.','Claude and Codex help me build faster. Deciding what is worth building is still my job.'],
 ['YOUR MOVE','Are you ready to be part of my journey?','']
 ];
 const stops=[0,1.45,2.65,3.7,4.95,5.57,5.99,6.55,7.36,7.78,8.44,9.31,10.49,11.45,13.3,15.0];
@@ -541,10 +541,18 @@ function unlock(){locked=false;timed=null;play.hidden=true;document.body.classLi
 addEventListener('click',e=>{const a=e.target.closest?.('a[href^="#"]');if(!a||!locked||a.getAttribute('href')==='#journey')return;unlock();
   const heading=document.querySelector(a.getAttribute('href')+' h2');if(!heading)return;
   heading.tabIndex=-1;requestAnimationFrame(()=>heading.focus({preventScroll:true}));heading.addEventListener('blur',()=>heading.removeAttribute('tabindex'),{once:true})});
-// The chapter rail: one tick per caption; a click travels there.
+// The chapter rail: one tick per caption; a click travels there. On phones the ticks are too small to tap,
+// so a progress bar with previous / next buttons (44px) takes their place.
 const rail=document.querySelector('#rail ol');
+const travel=k=>{k=Math.max(0,Math.min(stops.length-1,k));timed={from:shown,to:stops[k],duration:reduced.matches?1:Math.min(2600,900+Math.abs(stops[k]-shown)*260),at:performance.now()}};
 const railButtons=railLabels.map((label,k)=>{const li=document.createElement('li'),b=document.createElement('button');b.type='button';b.innerHTML='<span>'+label+'</span>';b.setAttribute('aria-label','Chapter '+(k+1)+': '+label);
-  b.onclick=()=>{timed={from:shown,to:stops[k],duration:reduced.matches?1:Math.min(2600,900+Math.abs(stops[k]-shown)*260),at:performance.now()}};li.append(b);rail.append(li);return b});
+  b.onclick=()=>travel(k);li.append(b);rail.append(li);return b});
+const phoneRail=document.createElement('div');phoneRail.className='rail-phone';
+const step=(label,glyph,dir)=>{const b=document.createElement('button');b.type='button';b.className='step';b.setAttribute('aria-label',label);b.innerHTML='<span aria-hidden="true">'+glyph+'</span>';b.onclick=()=>travel(current+dir);return b};
+const prevChapter=step('Previous chapter','\u2039',-1),nextChapter=step('Next chapter','\u203a',1);
+const bar=document.createElement('div');bar.className='bar';bar.setAttribute('aria-hidden','true');
+const barTicks=railLabels.map(()=>bar.appendChild(document.createElement('i')));
+phoneRail.append(prevChapter,bar,nextChapter);rail.parentElement.append(phoneRail);
 const deep=window.startHash&&window.startHash!=='#journey'&&document.getElementById(window.startHash.slice(1));
 if(deep){unlock();requestAnimationFrame(()=>deep.scrollIntoView())}
 let width=0,height=0,previousSheet=-1,previousSketch=-1,shown=0,lastFrame=0,lastS=-1,band=0;const article=document.querySelector('#journey article');
@@ -567,7 +575,7 @@ const arrive=reduced.matches?1:progress(Math.max(0,now-openedAt)/1000,.15,2.4);
 const resized=width!==stage.clientWidth||height!==stage.clientHeight;
 const alive=!reduced.matches&&(s<2.2||(s>10&&s<11.9)||(s>ENTER[0]-.05&&s<EXIT[1]+.05));
 if(s===lastS&&arrive>=1&&!alive&&!resized&&current===i)return;lastS=s;
-if(current!==i){current=i;const [label,title,voice,badge]=captions[i];const promoted=document.querySelector('#badge');promoted.hidden=!badge;promoted.textContent=badge||'';document.querySelector('#number').textContent=label;document.querySelector('#title').textContent=title;document.querySelector('#voice').textContent=voice;document.documentElement.classList.toggle('journey-end',i===captions.length-1);railButtons.forEach((b,k)=>{b.classList.toggle('passed',k<=i);b.toggleAttribute('aria-current',k===i)})}
+if(current!==i){current=i;const [label,title,voice,badge]=captions[i];const promoted=document.querySelector('#badge');promoted.hidden=!badge;promoted.textContent=badge||'';document.querySelector('#number').textContent=label;document.querySelector('#title').textContent=title;document.querySelector('#voice').textContent=voice;document.documentElement.classList.toggle('journey-end',i===captions.length-1);railButtons.forEach((b,k)=>{b.classList.toggle('passed',k<=i);b.toggleAttribute('aria-current',k===i)});barTicks.forEach((t,k)=>t.classList.toggle('passed',k<=i));prevChapter.disabled=i===0;nextChapter.disabled=i===captions.length-1}
 if(width!==stage.clientWidth||height!==stage.clientHeight){width=stage.clientWidth;height=stage.clientHeight;renderer.setSize(width,height,false);camera.aspect=width/height;camera.fov=width<620?46:33;camera.updateProjectionMatrix();band=article.offsetHeight}
 // On the way back each scene folds flat just as the helpers reach it; the net folds as they push the court in.
 const back=lineBack(s),hu=helperU(s),keep=u=>back>0?smooth((hu-u)/.05+1-smooth(back/.08)):1;   // eases in, so the home desk doesn't snap

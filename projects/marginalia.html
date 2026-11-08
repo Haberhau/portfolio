@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Marginalia · Florian Haberhauer</title><meta name="description" content="A notebook you talk to. Dictate what's on your mind; Apple's on-device model sees the tasks, events and reminders in it, and you decide what to add."><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preload" href="../fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/site.css?v=7"><link rel="stylesheet" href="project.css?v=8"><link rel="stylesheet" href="theme-marginalia.css?v=60"><script src="project.js?v=2" defer></script></head>
+<title>Marginalia · Florian Haberhauer</title><meta name="description" content="A notebook you talk to. Dictate what's on your mind; Apple's on-device model sees the tasks, events and reminders in it, and you decide what to add."><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preload" href="../fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/site.css?v=8"><link rel="stylesheet" href="project.css?v=8"><link rel="stylesheet" href="theme-marginalia.css?v=61"><script src="project.js?v=2" defer></script></head>
 <body class="theme-marginalia"><a class="skip-link" href="#main">Skip to content</a><header class="nav" aria-label="Site">
   <a class="mark" href="../index.html"><i aria-hidden="true"></i>Florian Haberhauer</a>
   <nav class="links" aria-label="Main"><a href="../index.html#work" aria-current="page">Work</a><a href="../story.html">Story</a><a href="../index.html#cv">CV</a><a href="../index.html#contact">Contact</a></nav>
@@ -13,29 +13,29 @@
 <main id="main">
 <div class="project-hero">
   <div class="crumbs"><a href="../index.html#work"><span aria-hidden="true">←</span> All work</a><span>Project 08 of 09</span></div>
-  <h1>Say what’s on your mind.<br>The next step is <em>found.</em></h1><p class="meta"><b>Marginalia</b> · iOS app · in testing</p>
-  <p class="lede">A notebook you talk to. Dictate a thought the way it comes out, and Apple’s on-device model sees what’s in it: a task, an event, a reminder. You decide what to add.</p>
+  <h1>Say what's on your mind<br>Marginalia finds <em>the next step</em></h1><p class="meta"><b>Marginalia</b> · iOS app · in testing</p>
+  <p class="lede">A notebook you talk to. Dictate a thought the way it comes out, and Apple's on-device model sees what's in it: a task, an event, a reminder. You decide what to add.</p>
   <p class="launch">Launching in the first half of 2027</p>
-  <p class="facts-line">Runs entirely on the phone, on Apple’s built-in AI. No subscription, no API costs, no account, nothing sent anywhere.</p>
+  <p class="facts-line">Runs entirely on the phone, on Apple's built-in AI. No subscription, no API costs, no account, nothing sent anywhere.</p>
 </div>
 <div class="project-story">
   <section class="story-section">
     <h2>Speak first. <em>Decide second.</em></h2>
-    <p>Most to-do apps want you to sort things while you’re still thinking. Marginalia lets you just talk: you dictate, the words appear as you say them, and when you’re done it reads the whole thing and suggests what to do with it.</p>
+    <p>Most to-do apps want you to sort things while you're still thinking. Marginalia lets you just talk: you dictate, the words appear as you say them, and when you're done it reads the whole thing and suggests what to do with it.</p>
     <div class="notebook">
       <div class="demo-heading"><span>DICTATION EXAMPLE</span><button id="reset-demo" type="button">Start over</button></div>
-      <button id="dictate" class="mic" type="button"><span class="mic-dot" aria-hidden="true"></span><span class="mic-label">Tap to dictate</span></button>
+      <button id="dictate" class="mic" type="button"><span class="mic-dot" aria-hidden="true"></span><span class="mic-label">Start dictating</span></button>
       <blockquote id="transcript" aria-live="polite"></blockquote>
       <p class="caption" id="seen" hidden>Seen in what you said</p>
       <div class="suggestion" hidden><div><h3>Call mom <small class="event">Event</small></h3><p>Tomorrow · 18:00 · About Sunday</p></div><button class="confirm event" type="button">Add event</button></div>
       <div class="suggestion" hidden><div><h3>Buy a lamp <small class="task">Task</small></h3><p>Before the weekend · For the hallway</p></div><button class="confirm" type="button">Add task</button></div>
-      <p id="demo-status" class="caption" role="status">Tap the microphone and listen in.</p>
+      <p id="demo-status" class="caption" role="status">Press the microphone and listen in.</p>
     </div>
     <p class="caption">A web illustration of the flow: the transcript and the suggestions are scripted, and no speech recognition or language model runs on this page.</p>
   </section>
   <section class="story-section">
     <h2>The intelligence stays <em>on the phone.</em></h2>
-    <p>Everything happens on the phone. Apple’s on-device Speech framework writes down what you say as you say it, and the language model built into Apple Intelligence turns the finished note into structured suggestions. Both ship with iOS, so there’s no AI service to pay for, no API key, no account and no backend.</p><p>Notes never leave the phone, it works offline, and nothing lands in your calendar or reminders until you confirm it. Built with AI coding agents.</p>
+    <p>Everything happens on the phone. Apple's on-device Speech framework writes down what you say as you say it, and the language model built into Apple Intelligence turns the finished note into structured suggestions. Both ship with iOS, so there's no AI service to pay for, no API key, no account and no backend.</p><p>Notes never leave the phone, it works offline, and nothing lands in your calendar or reminders until you confirm it. Built with AI coding agents.</p>
     <div class="tags"><span>iOS</span><span>Speech framework</span><span>Foundation Models</span><span>No backend</span><span>AI coding agents</span></div>
   </section>
   <section class="story-section">
@@ -63,7 +63,7 @@
   function reset() {
     timers.forEach(clearTimeout); timers = [];
     out.innerHTML = ''; out.classList.remove('read'); seen.hidden = true; cards.forEach(c => { c.hidden = true; c.classList.remove('in'); });
-    mic.disabled = false; mic.classList.remove('on'); label.textContent = 'Tap to dictate'; status.textContent = 'Tap the microphone and listen in.';
+    mic.disabled = false; mic.classList.remove('on'); label.textContent = 'Start dictating'; status.textContent = 'Press the microphone and listen in.';
   }
   mic.addEventListener('click', () => {
     mic.disabled = true; mic.classList.add('on'); label.textContent = 'Listening…'; status.textContent = '';
@@ -77,5 +77,5 @@
   document.querySelector('#reset-demo').addEventListener('click', reset);
 })();
 </script>
-<script src="../js/site.js?v=2" defer></script>
+<script src="../js/site.js?v=3" defer></script>
 </body></html>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>sprintkit · Florian Haberhauer</title><meta name="description" content="An open-source Claude Code plugin that gives solo projects tickets, stages and quality gates. You choose who runs each stage: shipped agents, your skills, a shell command or yourself."><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preload" href="../fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/site.css?v=7"><link rel="stylesheet" href="project.css?v=8"><link rel="stylesheet" href="theme-sprintkit.css?v=20"><script src="project.js?v=2" defer></script></head>
+<title>sprintkit · Florian Haberhauer</title><meta name="description" content="An open-source Claude Code plugin that gives solo projects tickets, stages and quality gates. You choose who runs each stage: shipped agents, your skills, a shell command or yourself."><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preload" href="../fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/site.css?v=8"><link rel="stylesheet" href="project.css?v=8"><link rel="stylesheet" href="theme-sprintkit.css?v=20"><script src="project.js?v=2" defer></script></head>
 <body class="theme-sprintkit"><a class="skip-link" href="#main">Skip to content</a><header class="nav" aria-label="Site">
   <a class="mark" href="../index.html"><i aria-hidden="true"></i>Florian Haberhauer</a>
   <nav class="links" aria-label="Main"><a href="../index.html#work" aria-current="page">Work</a><a href="../story.html">Story</a><a href="../index.html#cv">CV</a><a href="../index.html#contact">Contact</a></nav>
@@ -13,18 +13,18 @@
 <main id="main">
 <div class="project-hero">
   <div class="crumbs"><a href="../index.html#work"><span aria-hidden="true">←</span> All work</a><span>Project 09 of 09</span></div>
-  <h1>A team’s process.<br>A team of <em>one.</em></h1><p class="meta"><b>sprintkit</b> · Claude Code plugin · open source</p>
+  <h1>A team's process<br>A team of <em>one</em></h1><p class="meta"><b>sprintkit</b> · Claude Code plugin · open source</p>
   <p class="lede">An open-source Claude Code plugin that gives solo projects tickets, stages and quality gates. You choose who runs each stage: shipped agents, your skills, a shell command or yourself.</p>
-  <a class="button" href="https://github.com/Haberhau/sprintkit">View on GitHub</a>
+  <a class="button" href="https://github.com/Haberhau/sprintkit" target="_blank" rel="noopener">View on GitHub<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true">↗</span></a>
   
 </div>
 <div class="project-story">
   <section class="story-section">
     <h2>Watch a sprint <em>run itself.</em></h2>
-    <p>The live board opens in the browser and follows the work: tickets move from the backlog through refine, build, review and QA to done as each stage runs. When a gate isn’t passed, the ticket goes back a step.</p>
+    <p>The live board opens in the browser and follows the work: tickets move from the backlog through refine, build, review and QA to done as each stage runs. When a gate isn't passed, the ticket goes back a step.</p>
     <figure class="board-demo">
       <div class="window"><div class="window-bar"><i></i><i></i><i></i><span>sprintkit board</span></div>
-        <div class="window-scroll"><img src="img/sprintkit/demo.gif" width="1140" height="380" alt="A sprint on the sprintkit board: tickets move from backlog through refine, build, review and QA to done; one bounces back from review"></div></div>
+        <div class="window-scroll" tabindex="0" role="region" aria-label="The sprint board recording, scrolls sideways"><img src="img/sprintkit/demo.gif" width="1140" height="380" alt="A sprint on the sprintkit board: tickets move from backlog through refine, build, review and QA to done; one bounces back from review"></div></div>
       <figcaption>A sprint on the board, recorded from the plugin. One ticket bounces back from review.</figcaption>
     </figure>
   </section>
@@ -45,7 +45,7 @@
   <section class="story-section">
     <h2>Bring <em>a ticket.</em></h2>
     <p>Install the plugin in Claude Code, then create your first story.</p>
-    <div class="code-heading"><span>CLAUDE CODE</span><button id="copy-install" type="button">Copy commands</button></div><pre><code id="install-commands">/plugin marketplace add Haberhau/sprintkit
+    <div class="code-heading"><span>CLAUDE CODE</span><button id="copy-install" type="button">Copy commands</button></div><pre tabindex="0" aria-label="Install commands"><code id="install-commands">/plugin marketplace add Haberhau/sprintkit
 /plugin install sprintkit@sprintkit
 /sprintkit:ticket story Users can switch to dark mode</code></pre><p id="copy-status" class="caption" role="status"></p>
   </section>
@@ -55,5 +55,5 @@
 <div class="actions"><a class="btn" href="mailto:haberhauer34@gmail.com?subject=Hello%20Florian">Email me</a><a class="btn ghost" href="../Florian-Haberhauer-CV.pdf" download>Download CV</a></div></section>
 </main>
 <footer class="foot"><div class="wrap"><span>© 2026 Florian Haberhauer</span><nav aria-label="Footer"><a href="../index.html#work">All work</a><a href="../story.html">My story</a></nav></div></footer>
-<script src="../js/site.js?v=2" defer></script>
+<script src="../js/site.js?v=3" defer></script>
 </body></html>
