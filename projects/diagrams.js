@@ -180,7 +180,37 @@ function customer(tall) {
   return svg;
 }
 
-const diagrams = { mailflow, sources, window: window_, sieve, customer };
+// Salesforce: the two clouds of the B2C setup. Orange is Florian's; dashed grey is where he was involved.
+function salesforce(tall) {
+  const B = 21, S = tall ? 17 : 16;   // phones: 17 so the smallest text still renders at 12px or more
+  const svg = el('svg', { viewBox: tall ? '0 0 400 310' : '0 0 1000 320' });
+  const box = (x, y, w, h, title, sub, cls) => { const g = card(svg, x, y, w, h, cls); const on = cls === 'dg-hub' ? ' on' : '';
+    text(g, x, y + (sub ? -4 : B * .35), title, B, 'dg-b' + on); if (sub) text(g, x, y + S + 4, sub, S, 'dg-s' + on); };
+  const line = (d, cls, dots) => { el('path', { d, class: cls }, svg);
+    for (let n = 0; n < dots; n++) cls === 'dg-mine' ? dot(svg, d, 2.2, -n * .73, 5) : dot(svg, d, 2.6, -n * 1.3, 5, 'dg-dot grey'); };
+  const label = (x, y, str, mine) => text(svg, x, y, str, S, mine ? 'dg-role' : 'dg-s');
+  // Salesforce on top, its two clouds below: Service Cloud on an orange line (his), Marketing Cloud on a dashed one (involved)
+  if (!tall) {
+    line('M430,100 C430,150 250,130 250,168', 'dg-mine', 3);
+    line('M570,100 C570,150 750,130 750,168', 'dg-involved', 2);
+    box(500, 60, 260, 80, 'Salesforce', 'for our B2C business', 'dg-hub');
+    box(250, 210, 300, 84, 'Service Cloud', 'B2C customer service');
+    box(750, 210, 300, 84, 'Marketing Cloud', 'all marketing communication');
+    label(250, 280, 'Mine since 2023', true);
+    label(750, 280, 'Involved in the rollout'); label(750, 302, 'My automations: −30% developer hours', true);
+  } else {
+    line('M160,88 C160,120 97,120 97,152', 'dg-mine', 3);
+    line('M240,88 C240,120 303,120 303,152', 'dg-involved', 2);
+    box(200, 50, 260, 76, 'Salesforce', 'for our B2C business', 'dg-hub');
+    box(97, 190, 186, 76, 'Service Cloud', 'customer service');
+    box(303, 190, 186, 76, 'Marketing Cloud', 'marketing');
+    label(97, 252, 'Mine since 2023', true);
+    label(303, 252, 'Involved in the rollout'); label(303, 274, 'My automations:', true); label(303, 296, '−30% developer hours', true);
+  }
+  return svg;
+}
+
+const diagrams = { mailflow, sources, window: window_, sieve, customer, salesforce };
 document.querySelectorAll('[data-diagram]').forEach(box => {
   let tall;
   const draw = () => { tall = box.clientWidth < 640; const svg = diagrams[box.dataset.diagram](tall); svg.setAttribute('width', '100%'); box.replaceChildren(svg); if (still.matches) svg.pauseAnimations?.(); };

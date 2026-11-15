@@ -77,6 +77,11 @@
 [data-diagram] .dg-key.in, [data-diagram] .dg-b.mark { fill: var(--mark); }
 [data-diagram] .on { fill: #fff; }
 [data-diagram] .dg-s.on { fill: #d4d4d8; }
+/* Salesforce system map: Florian's lines, where he was involved, who he coordinates with */
+.dg-mine { fill: none; stroke: var(--mark); stroke-width: 5; stroke-linecap: round; }
+.dg-involved { fill: none; stroke: #a1a1aa; stroke-width: 2; stroke-dasharray: 6 6; }
+.dg-coord { fill: none; stroke: #a1a1aa; stroke-width: 1.5; stroke-dasharray: 2 5; stroke-linecap: round; }
+[data-diagram] .dg-role { fill: var(--orange-text); font-weight: 600; }   /* text orange: the line orange fails contrast as small text */
 .dg-glasses circle, .dg-glasses path { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
 .dg-glasses.on circle, .dg-glasses.on path { stroke: #fff; }
 .dg-window { fill: var(--sky-soft); stroke: var(--mark); stroke-width: 1.5; stroke-dasharray: 6 4; }

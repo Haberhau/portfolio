@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salesforce for B2C · Florian Haberhauer</title>
+<meta name="description" content="How I took over the Salesforce Service Cloud project as an intern, made it my own as data analyst, and built the automations on Marketing Cloud.">
+<link rel="canonical" href="https://haberhau.github.io/portfolio/projects/salesforce-rollout.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://haberhau.github.io/portfolio/projects/salesforce-rollout.html">
+<meta property="og:title" content="Salesforce for B2C · Florian Haberhauer">
+<meta property="og:description" content="How I took over the Salesforce Service Cloud project as an intern, made it my own as data analyst, and built the automations on Marketing Cloud.">
+<meta property="og:image" content="https://haberhau.github.io/portfolio/img/share.jpg?v=3">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Florian Haberhauer: I read the numbers, then I build the tool. Three figures (90% less manual reporting work, MSc GPA 9.23, 13,486 products scraped) beside a framed still of a drawn volleyball court with Florian as the one orange figure.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f4f1ea">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" href="../fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css?v=9">
+<link rel="stylesheet" href="process.css?v=8">
+<link rel="stylesheet" href="work.css?v=2">
+<style>
+  /* A full-width section: the five stops need the room the sticky label column would take */
+  @media (min-width: 1024px) { .part.wide { grid-template-columns: minmax(0, 1fr); } .part.wide > h2 { position: static; } }
+
+  /* The path: the site's orange line with one dot per stop. Filled dot: my work. Hollow: involved. No boxes. */
+  .path { list-style: none; margin: var(--s-500) 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); row-gap: var(--s-600); }
+  .path li { position: relative; padding: var(--s-500) var(--s-300) 0 0; }
+  .path li::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 3px; background: var(--orange); }   /* this stop's stretch of line */
+  .path li::after { content: ""; position: absolute; left: 0; top: 0; width: 16px; height: 16px; border-radius: var(--r-full); background: var(--orange); }
+  .path li:not(.mine)::after { background: var(--bg); border: 2px solid var(--line); box-sizing: border-box; }
+  .path li:last-child::before { right: auto; width: 16px; }   /* the line ends at the last dot */
+  .path small { display: block; font: 500 12px/16px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+  .path b { display: block; margin-top: var(--s-75); font-size: 18px; line-height: 28px; font-weight: 500; }
+  .path span { display: block; margin-top: var(--s-50); font-size: 14px; line-height: 20px; color: var(--muted); }
+  @media (max-width: 1199px) { .path { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 639px) {   /* phones: the line runs down the left */
+    .path { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+    .path li { padding: 0 0 var(--s-400) var(--s-500); }
+    .path li::before { left: 6.5px; right: auto; top: 8px; bottom: 0; width: 3px; height: auto; }
+    .path li:last-child::before { display: none; }
+  }
+  .part .chips { margin-top: var(--s-500); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="reading" aria-hidden="true"></div>
+
+<header class="nav" aria-label="Site">
+  <a class="mark" href="../index.html"><i aria-hidden="true"></i>Florian Haberhauer</a>
+  <nav class="links" aria-label="Main"><a href="../index.html#work" aria-current="page">Work</a><a href="../story.html">My story</a><a href="../index.html#cv">CV</a><a href="../index.html#contact">Contact</a></nav>
+  <a class="btn small" href="../Florian-Haberhauer-CV.pdf" target="_blank" rel="noopener">View CV<span class="sr-only"> (opens in a new tab)</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="panel" aria-label="Menu"><span></span><span></span></button>
+</header>
+<nav class="panel" id="panel" aria-label="Menu">
+  <a href="../index.html#work">Work</a><a href="../story.html">My story</a><a href="../index.html#cv">CV</a><a href="../index.html#contact">Contact</a><a href="../Florian-Haberhauer-CV.pdf" target="_blank" rel="noopener">View CV<span class="sr-only"> (opens in a new tab)</span></a>
+</nav>
+
+<main id="main">
+  <div class="wrap crumbs"><a href="../index.html#work"><span aria-hidden="true">←</span> All work</a><span>Project 04 of 10</span></div>
+
+  <header class="wrap head">
+    <h1 class="heading-1 grad">From intern on the project to owner of the system</h1>
+    <p class="meta">At work · Silhouette · Salesforce Service Cloud and Marketing Cloud</p>
+    <p class="sub body-7">We implemented Salesforce Service Cloud to improve our B2C customer service, and Marketing Cloud to bring all our marketing communication into the same Salesforce ecosystem. I took over the Service Cloud project as an intern and made it mine as data analyst. Today it is my responsibility.</p>
+    <dl class="proof">
+      <div><dt>Owner</dt><dd>of Service Cloud for B2C customer service</dd></div>
+      <div><dt>2023</dt><dd>on the project since then, starting as an intern</dd></div>
+      <div><dt>−30%</dt><dd>developer hours through my AMPscript and SQL automations</dd></div>
+    </dl>
+    <p class="note"><b>Company-internal.</b> This page shows my part; the internal details stay inside.</p>
+  </header>
+
+  <div class="wrap">
+    <section class="part" data-reveal aria-labelledby="p1">
+      <h2 id="p1">What I run today</h2>
+      <div>
+        <p class="lead heading-5">Two Salesforce clouds for our B2C business. The orange line is what's mine.</p>
+        <figure class="diagram"><div data-diagram="salesforce" role="img" aria-label="Salesforce for the B2C business, with its two clouds. Service Cloud, for B2C customer service, is on an orange line: mine since 2023. Marketing Cloud, for all marketing communication, is on a dashed grey line: I was involved in the rollout, and the automations on it are mine, which cut developer hours by 30%."></div></figure>
+      </div>
+    </section>
+
+    <section class="part wide" data-reveal aria-labelledby="p2">
+      <h2 id="p2">How it became mine</h2>
+      <div>
+        <p class="lead heading-5">Five stops, from my first project as an intern to the system I run today.</p>
+        <ol class="path">
+          <li class="mine"><small>2023 · Intern</small><b>Service Cloud</b><span>We implemented Service Cloud to improve our B2C customer service. As an intern I took over the project and did the work. My superiors gave the final yes.</span></li>
+          <li class="mine"><small>2024 · Data analyst</small><b>My project</b><span>Full responsibility. From here on, the final yes was mine.</span></li>
+          <li><small>Marketing · Involved</small><b>Marketing Cloud</b><span>We added Marketing Cloud to bring all marketing communication into Salesforce. Not my rollout: I was involved, including the testing.</span></li>
+          <li class="mine"><small>Marketing · Mine</small><b>Automations</b><span>I started building automations and data sets with AMPscript and SQL. −30% developer hours.</span></li>
+          <li class="mine"><small>Now</small><b>Owner</b><span>If something breaks in Service Cloud, it's mine to solve. I coordinate Service Cloud and Marketing Cloud with IT and customer service.</span></li>
+        </ol>
+        <div class="chips" aria-label="Tools"><span>Salesforce Service Cloud</span><span>Marketing Cloud</span><span>AMPscript</span><span>SQL</span></div>
+      </div>
+    </section>
+
+    <a class="nextp" href="thesis.html"><small>Next · Project 05 of 10</small><strong>Spain's fashion split</strong><span class="arrow" aria-hidden="true">→</span></a>
+
+    <section class="talk" aria-labelledby="talk-h">
+      <h2 class="heading-3" id="talk-h">Hiring for a data role? Let's talk.</h2>
+      <div class="actions"><a class="btn" href="mailto:haberhauer34@gmail.com?subject=Hello%20Florian">Email me</a><a class="btn ghost" href="../Florian-Haberhauer-CV.pdf" target="_blank" rel="noopener">View CV<span class="sr-only"> (opens in a new tab)</span></a></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><span>© 2026 · Disclosure (§ 25 MedienG): Florian Haberhauer, Amstetten, Austria</span><nav aria-label="Footer"><a href="../index.html#work">All work</a><a href="../story.html">My story</a><a href="../privacy.html">Privacy</a></nav></div>
+</footer>
+
+<script src="diagrams.js?v=12" defer></script>
+<script src="../js/site.js?v=3" defer></script>
+</body>
+</html>
